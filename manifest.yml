@@ -1,4 +1,4 @@
 ---
 applications:
-- name: my-app
+- name: TeamCityTest
   command: node app.js
