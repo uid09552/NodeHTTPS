@@ -1,13 +1,18 @@
 /**
  * Created by Max on 06.10.2015.
  */
+ 
 var http = require('http');
 
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
+});
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+server.listen(process.env.VCAP_APP_PORT || 3000);
 
 
-http.createServer(options, function (req, res) {
-    res.writeHead(200);
-    res.end("Hi from HTTP");
-}).listen(process.env.VCAP_APP_PORT || 3000);
 
 
